@@ -1,0 +1,22 @@
+<div class="detail-class" *ngIf="class">
+  <h3>Edit Class</h3>
+  <div class="body-class">
+    <div>
+      <h4>Name Class</h4><span>{{class.name  | uppercase}}</span>
+    </div>
+    <div>
+      <span>ID: </span>{{class.id}}
+    </div>
+    <div>
+      <label for="class-name">New Name: </label>
+      <input id ="class=name"
+      [(ngModel)]= "class.name"
+      placeholder="name"/>
+    </div>
+  </div>
+  <div class="footer-class">
+    <button (click)="goBack()">Go back</button>
+    <button (click)="save(class.name)">Save</button>
+  </div>
+
+</div>

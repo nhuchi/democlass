@@ -1,0 +1,24 @@
+<div class="main">
+  <form class="add-class">
+    <input for="new-lass" #className placeholder="Class Name....">
+    <button (click)="add(className.value); className.value='' ">Add</button>
+  </form>
+
+  <form class="list-class">
+    <h2>List class name</h2>
+    <div class="myclass" *ngFor="let class of myclass">
+      <!-- <div class="list" routerLink="/{{class.id}}"><span class="badge">{{class.name}}</span>
+      </div> -->
+      <div class="list" routerLink="/{{class.id }}">
+        <span class="badge">{{class.id}}</span>{{class.name}}
+      </div>
+      <div class="edit" title="edit class" routerLink="/class/{{class.id }}">
+        <i class="fa fa-edit"></i>
+      </div>
+      <div class="delete" title="delete class" (click)="deleteClass(class.id)">
+        <i class="fa fa-trash"></i>
+      </div>
+    </div>
+  </form>
+
+</div>

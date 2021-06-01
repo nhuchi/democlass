@@ -1,0 +1,32 @@
+<div class="add-student">
+    <input
+      for="new-student"
+      #studentName
+      placeholder="Name student..!"
+    />
+
+    <button (click)="add(studentName.value); studentName.value = ''">
+      Add Student
+    </button>
+  </div>
+  <div class="list-student">
+    <h2>{{ name_class }}</h2>
+    <div class="student-item" *ngFor="let item of listStudent">
+      <!-- <div class="item-left">
+        {{ item.name }}
+      </div> -->
+      <div class="list">
+        <span class="badge">{{item.id}} </span>{{item.name}}
+      </div>
+      <div class="edit" title="edit class" routerLink="/{{ id }}/{{ item.id }}">
+        <i class="fa fa-pencil"></i>
+      </div>
+      <div class="delete" title="delete class" (click)="deleteStudents(item.id)">
+        <i class="fa fa-trash"></i>
+      </div>
+    </div>
+    <div class="footer-class">
+      <button (click)="goBack()">Go back</button>
+    </div>
+  </div>
+
